@@ -167,14 +167,14 @@ class Widget extends React.Component {
         super(),
             this.state = {
                 input: {
-                    value: "Edit me",
+                    value: "Edit me ",
                 },
-                text: "Edit me"
+                text: "Edit me "
             }
         this.onChange = this.onChange.bind(this);
     }
 
-    onChange() {
+    onChange(event) {
         this.setState({
             input: {
                 value: event.target.value,
