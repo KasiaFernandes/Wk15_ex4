@@ -1,3 +1,6 @@
+// STOPWATCH
+
+/*
 class Stopwatch extends React.Component {
     constructor() {
         super();
@@ -116,5 +119,43 @@ class Stopwatch extends React.Component {
 }
 
 ReactDOM.render(<Stopwatch />, document.getElementById("stopwatch"));
+*/
 
+// COUNTER
+
+class Counter extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            counter: 0,
+        }
+    }
+
+    increment() {
+        this.setState({
+            counter: this.state.counter += 1
+        })
+    }
+
+    decrement() {
+        this.setState({
+            counter: this.state.counter -= 1
+        })
+    }
+
+    render() {
+        return (
+            <div>
+                <div id="counter">
+                    <button className="inc" onClick={this.increment.bind(this)}>+1</button>
+                    <button className="dec" onClick={this.decrement.bind(this)}>-1</button>
+                    <h1 className="counter">{this.state.counter}</h1>
+                </div>
+            </div>
+        )
+    }
+}
+
+ReactDOM.render(<Counter />, document.getElementById("count1"));
+ReactDOM.render(<Counter />, document.getElementById("count2"));
 
