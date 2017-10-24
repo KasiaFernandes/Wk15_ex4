@@ -166,27 +166,21 @@ class Widget extends React.Component {
     constructor() {
         super(),
             this.state = {
-                input: {
-                    value: "Edit me ",
-                },
-                text: "Edit me "
+                text: "Edit me"
             }
         this.onChange = this.onChange.bind(this);
     }
 
     onChange(event) {
         this.setState({
-            input: {
-                value: event.target.value,
-            },
-            text: this.state.input.value
+            text: event.target.value
         });
     }
 
     render() {
         return (
             <div>
-                <input onChange={this.onChange} value={this.state.input.value} type="text" />
+                <input onChange={this.onChange} value={this.state.text} type="text" />
                 <h1>{this.state.text}</h1>
             </div>
         )
